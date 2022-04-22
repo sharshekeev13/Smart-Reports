@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whiteBackActionBar"
+    >
+
+    <TextView
+        android:id="@+id/alert_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/spend_money"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/fontTitle"
+        android:layout_marginTop="26dp"
+        />
+    <TextView
+        android:id="@+id/alert_description"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/alert_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/spend_money_description"
+        style="@style/fontDescription"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/social_media_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/alert_description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        style="@style/fontTitleSmall"
+        android:text="@string/social_media"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/social_media_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/alert_description"
+        app:layout_constraintLeft_toRightOf="@id/social_media_name"
+        style="@style/fontTitleSmall"
+        android:text="@string/social_media"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/number_of_money"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/social_media_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:inputType="number"
+        android:hint="@string/write_the_number"
+        style="@style/fontDescription"
+        android:background="@drawable/login_textinput_background"
+        android:layout_marginTop="20dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:maxLength="9"
+        android:autofillHints="null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/number_of_money"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:weightSum="100"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/spend_money_cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            app:layout_constraintTop_toBottomOf="@id/number_of_money"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/alert_dialog_button"
+            android:elevation="0dp"
+            android:layout_marginStart="60dp"
+            style="@style/fontTitleSmall"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/halo_blueText"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="12dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/spend_money_spend_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            app:layout_constraintTop_toBottomOf="@id/number_of_money"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/alert_dialog_button"
+            android:elevation="0dp"
+            android:layout_marginEnd="60dp"
+            style="@style/fontTitleSmall"
+            android:text="@string/spend"
+            android:backgroundTint="@color/halo_blueText"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteBackActionBar"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="12dp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

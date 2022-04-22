@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/halo_blueText"/>
+            <size android:width="5dp"
+                android:height="5dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_moon_extrawide"
+        android:left="7dp"
+        android:right="5dp"
+        android:bottom="5dp"
+        android:top="5dp"
+        >
+    </item>
+</layer-list>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whiteBackActionBar">
+
+    <ImageView
+        android:id="@+id/employee_icon_alert"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/account_drawble_user_info"
+        android:background="@drawable/circle_white"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/employee"
+        />
+
+    <TextView
+        android:id="@+id/name_employee_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dastan_sharshekeev"
+        app:layout_constraintTop_toBottomOf="@id/employee_icon_alert"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/fontTitleSmall"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/position_employee_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/marketing"
+        app:layout_constraintTop_toBottomOf="@id/name_employee_alert"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/fontTitleSmall"
+        android:textSize="12sp"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/salary_textView_justText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salary"
+        app:layout_constraintTop_toBottomOf="@id/position_employee_alert"
+        app:layout_constraintLeft_toLeftOf="@id/salary_description"
+        style="@style/fontDescription"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:id="@+id/salary_num_to_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salary"
+        app:layout_constraintLeft_toRightOf="@id/salary_textView_justText"
+        app:layout_constraintTop_toBottomOf="@id/position_employee_alert"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        style="@style/fontDescription"
+        />
+
+    <TextView
+        android:id="@+id/salary_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/if_you"
+        style="@style/fontDescription"
+        app:layout_constraintTop_toBottomOf="@id/salary_textView_justText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        />
+
+    <EditText
+        android:id="@+id/number_of_money_employee"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/salary_description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:inputType="number"
+        android:hint="@string/write_the_number"
+        style="@style/fontDescription"
+        android:background="@drawable/login_textinput_background"
+        android:layout_marginTop="20dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:maxLength="9"
+        android:autofillHints="null" />
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/number_of_money_employee"
+        app:layout_constraintLeft_toLeftOf="@id/number_of_money_employee"
+        app:layout_constraintRight_toRightOf="@id/number_of_money_employee"
+        android:layout_marginTop="20dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/lowerButtonEmployee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/alert_dialog_button"
+            android:text="@string/lower"
+            style="@style/fontDescription"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:elevation="0dp"
+            android:layout_marginEnd="20dp"
+            tools:ignore="RtlHardcoded" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/raise_button_employee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/alert_dialog_button"
+            android:text="@string/raise"
+            style="@style/fontDescription"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:elevation="0dp"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/close_button_employee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/buttons_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/alert_dialog_button"
+        android:backgroundTint="@color/halo_blueText"
+        android:text="@string/close"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        style="@style/fontTitleSmall"
+        android:textColor="@color/whiteBackActionBar"
+        android:textAllCaps="false"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

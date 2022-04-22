@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/category_card"
+    android:layout_margin="10dp"
+    android:background="@drawable/fragment_marketing"
+    app:cardCornerRadius="15dp"
+    app:contentPadding="4dp"
+    >
+
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/name_employee_for_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/fontDescription"
+        android:text="@string/dastan_sharshekeev"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="12dp"/>
+
+</com.google.android.material.card.MaterialCardView>

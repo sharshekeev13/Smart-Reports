@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name" translatable="false">Smart Reports</string>
+    <string name="login">Login</string>
+    <string name="sign_in">Sign in</string>
+    <string name="description_login_page">Please write your username and password, to login.</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="social_media">Social Media</string>
+    <string name="area">Area</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_dear">Hello,</string>
+    <string name="tap_to_spend_money">Tap to spend money</string>
+    <string name="spend_money_description">Please write the amount you want to spend on promotion.</string>
+    <string name="write_the_number">Write the number</string>
+    <string name="logout">Logout</string>
+    <string name="alert_logout_description">Do you really want to logout?</string>
+    <string name="cancel">Cancel</string>
+    <string name="spend">Spend</string>
+    <string name="spend_money">Spend Money</string>
+    <string name="search">Search</string>
+    <string name="som"> Som</string>
+    <string name="how_are_you_today">How are you today?</string>
+    <string name="budget">Budget</string>
+    <string name="_123456">123456</string>
+    <string name="marketing">Marketing</string>
+    <string name="director">Director</string>
+    <string name="employee">Employees</string>
+    <string name="manager">Manager</string>
+    <string name="en">EN</string>
+    <string name="ru">RU</string>
+    <string name="toDo">To Do</string>
+    <string name="completed">Completed</string>
+    <string name="directions">Directions</string>
+    <string name="pervomay">Pervomayskiy</string>
+    <string name="oktyab">Oktyabrskiy</string>
+    <string name="lenin">Leninskiy</string>
+    <string name="sverd">Sverdlovskiy</string>
+    <string name="ky">KG</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="salary">Salary</string>
+    <string name="profile_settings">Profile settings</string>
+    <string name="information">Information</string>
+    <string name="my_salary">My salary</string>
+    <string name="settings">Settings</string>
+    <string name="change_language">Change language</string>
+    <string name="switch_theme">Switch theme</string>
+    <string name="change_password">Change password</string>
+    <string name="error">Number entered is over budget</string>
+    <string name="good">Funds successfully spent!</string>
+    <string name="salaries">Salaries</string>
+    <string name="close">Close</string>
+    <string name="dastan_sharshekeev">Dastan Sharshekeev</string>
+    <string name="if_you">If you want to reduce or increase the salary of an employee, enter the amount and click the appropriate button.</string>
+    <string name="lower">Lower</string>
+    <string name="raise">Raise</string>
+    <string name="successSalary">Successfully changed</string>
+    <string name="select_employee">Select employee</string>
+    <string name="add_direction">Add direction</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="add">Add</string>
+    <string name="please_select_employee">Please select employee!</string>
+    <string name="successAdd">"Successfully created! "</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

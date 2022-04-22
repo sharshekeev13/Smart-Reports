@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Smart Reports</string>
+    <string name="login">Кирүү</string>
+    <string name="sign_in">Авторизация</string>
+    <string name="description_login_page">Кирүү үчүн колдонуучу атыңызды жана паролуңузду жазыңыз.</string>
+    <string name="username">Аккаунтын аты</string>
+    <string name="password">Пароль</string>
+    <string name="social_media">Социалдык тармак</string>
+    <string name="area">Райондор</string>
+
+    <string name="hello_dear">Кош келиңиз,</string>
+    <string name="tap_to_spend_money">Сарптоо үчүн чыкылдатыңыз</string>
+    <string name="spend_money_description">Акцияга жумшай турган суммаңызды жазыңыз.</string>
+    <string name="write_the_number">Жалпы баасы</string>
+    <string name="logout">Чыгуу</string>
+    <string name="alert_logout_description">Каттоо эсебиңизден чын эле чыккыңыз келеби?</string>
+    <string name="cancel">Жок</string>
+    <string name="spend">Коротуу</string>
+    <string name="spend_money">Акчаны коротуу</string>
+    <string name="search">Издөө</string>
+    <string name="som"> Сом</string>
+    <string name="how_are_you_today">Как у Вас дела сегодня?</string>
+    <string name="budget">Бюджет</string>
+    <string name="_123456">123456</string>
+    <string name="marketing">Маркетинг</string>
+    <string name="director">Директор</string>
+    <string name="employee">Кызматкерлер</string>
+    <string name="manager">Менеджер</string>
+    <string name="en">EN</string>
+    <string name="ru">RU</string>
+    <string name="toDo">Эмне кылуу тизмеси</string>
+    <string name="completed">Аякталды</string>
+    <string name="directions">Багыттар</string>
+    <string name="pervomay">Первомайский</string>
+    <string name="oktyab">Октябрьский</string>
+    <string name="lenin">Ленинский</string>
+    <string name="sverd">Свердловский</string>
+    <string name="ky">KG</string>
+    <string name="salary">Айлык</string>
+    <string name="profile_settings">Профилдин орнотуулар</string>
+    <string name="information">Information</string>
+    <string name="my_salary">Менин айлыгым</string>
+    <string name="settings">Орнотуулар</string>
+    <string name="change_language">Тилди которуу</string>
+    <string name="switch_theme">Теманы которуу</string>
+    <string name="change_password">Парольду алмаштыруу</string>
+    <string name="good">Каражаттар ийгиликтүү сарпталды!</string>
+    <string name="error">Киргизилген сан бюджеттен ашып кетти!</string>
+    <string name="salaries">Айлыктар</string>
+    <string name="close">Жабуу</string>
+    <string name="dastan_sharshekeev">Dastan Sharshekeev</string>
+    <string name="if_you">Эгерде сиз кызматкердин эмгек акысын кыскартууну же көбөйтүүнү кааласаңыз, анда сумманы киргизип, тиешелүү баскычты басыңыз.</string>
+    <string name="lower">Төмөндөтүү</string>
+    <string name="raise">Көтөрүү</string>
+    <string name="successSalary">Successfully changed</string>
+    <string name="add_direction">Add direction</string>
+    <string name="please_select_employee">Please select employee!</string>
+    <string name="successAdd">"Successfully created! "</string>
+
+
+</resources>
