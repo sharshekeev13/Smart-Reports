@@ -50,18 +50,20 @@
     <string name="salaries">Salaries</string>
     <string name="close">Close</string>
     <string name="dastan_sharshekeev">Dastan Sharshekeev</string>
-    <string name="if_you">If you want to reduce or increase the salary of an employee, enter the amount and click the appropriate button.</string>
+    <string name="if_you">To change the salary, enter the changed salary and click the Change button.</string>
     <string name="lower">Lower</string>
     <string name="raise">Raise</string>
     <string name="successSalary">Successfully changed</string>
-    <string name="select_employee">Select employee</string>
     <string name="add_direction">Add direction</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="add">Add</string>
+    <string name="select_employee">Select employee</string>
     <string name="please_select_employee">Please select employee!</string>
     <string name="successAdd">"Successfully created! "</string>
+    <string name="change">Change</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_enable_internet_connection">Please enable internet connection.</string>
+    <string name="refresh">Refresh</string>
 
 </resources>

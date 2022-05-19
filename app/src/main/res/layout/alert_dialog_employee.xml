@@ -105,20 +105,22 @@
         app:layout_constraintTop_toBottomOf="@id/number_of_money_employee"
         app:layout_constraintLeft_toLeftOf="@id/number_of_money_employee"
         app:layout_constraintRight_toRightOf="@id/number_of_money_employee"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         >
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/lowerButtonEmployee"
+            android:id="@+id/cancel_button_alert_employee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/alert_dialog_button"
-            android:text="@string/lower"
-            style="@style/fontDescription"
+            android:text="@string/cancel"
+            style="@style/fontTitleSmall"
             android:textSize="12sp"
             android:textAllCaps="false"
             android:padding="10dp"
+            android:textColor="@color/halo_blueText"
             android:elevation="0dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             tools:ignore="RtlHardcoded" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -126,33 +128,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/alert_dialog_button"
-            android:text="@string/raise"
-            style="@style/fontDescription"
+            android:backgroundTint="@color/halo_blueText"
+            android:text="@string/change"
+            style="@style/fontTitleSmall"
+            android:textColor="@color/whiteBackActionBar"
             android:textSize="12sp"
             android:textAllCaps="false"
             android:padding="10dp"
             android:elevation="0dp"
             android:layout_marginStart="20dp"/>
     </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/close_button_employee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/buttons_layout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/alert_dialog_button"
-        android:backgroundTint="@color/halo_blueText"
-        android:text="@string/close"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp"
-        style="@style/fontTitleSmall"
-        android:textColor="@color/whiteBackActionBar"
-        android:textAllCaps="false"
-        />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

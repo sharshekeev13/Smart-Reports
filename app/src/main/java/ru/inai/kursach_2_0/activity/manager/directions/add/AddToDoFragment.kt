@@ -122,8 +122,4 @@ class AddToDoFragment : Fragment() {
 
         })
     }
-
-    companion object {
-        fun newInstance() = AddToDoFragment()
-    }
 }

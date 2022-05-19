@@ -1,6 +1,7 @@
 package ru.inai.kursach_2_0.repo.api
 
 import okhttp3.MultipartBody
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 import ru.inai.kursach_2_0.repo.models.*
@@ -70,5 +71,7 @@ interface ApiInterface {
         @Field("title") title : String
     ) : Response<EmployeeToDoModel>
 
+    @DELETE("/todo-employee/delete/{id}")
+    suspend fun deleteToDo(@Path ("id") id : Int) : Response<Unit>
 
 }

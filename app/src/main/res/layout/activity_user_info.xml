@@ -239,6 +239,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
+        android:id="@+id/profile_icon_user_info"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/account_drawble_user_info"

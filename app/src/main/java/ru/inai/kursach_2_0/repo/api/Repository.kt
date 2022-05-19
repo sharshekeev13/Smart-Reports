@@ -114,4 +114,12 @@ class Repository {
         }
         return null
     }
+
+    suspend fun deleteToDo(id : Int) : Response<Unit>?{
+        val request = ApiInstance.apiClients.deleteToDo(id)
+        if(request.isSuccessful){
+            return request
+        }
+        return null
+    }
 }

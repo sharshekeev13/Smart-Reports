@@ -59,11 +59,11 @@ class BudgetByCategoryAdapter(_context : Context) : RecyclerView.Adapter<BudgetB
         when(list[position].name){
             "Зарплата" -> {
                 holder.category.text = context.resources.getString(R.string.salary)
-                holder.budgetForCategory.text = list[position].sum.toString()
+                holder.budgetForCategory.text = list[position].sum.toString() + context.getString(R.string.som)
             }
             "Маркетинг" -> {
                 holder.category.text = context.resources.getString(R.string.marketing)
-                holder.budgetForCategory.text = list[position].sum.toString()
+                holder.budgetForCategory.text = list[position].sum.toString() + context.getString(R.string.som)
             }
         }
     }

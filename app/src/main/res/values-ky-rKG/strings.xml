@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Smart Reports</string>
     <string name="login">Кирүү</string>
-    <string name="sign_in">Авторизация</string>
+    <string name="sign_in">Аккаунтка кирүү</string>
     <string name="description_login_page">Кирүү үчүн колдонуучу атыңызды жана паролуңузду жазыңыз.</string>
     <string name="username">Аккаунтын аты</string>
     <string name="password">Пароль</string>
@@ -49,13 +49,19 @@
     <string name="salaries">Айлыктар</string>
     <string name="close">Жабуу</string>
     <string name="dastan_sharshekeev">Dastan Sharshekeev</string>
-    <string name="if_you">Эгерде сиз кызматкердин эмгек акысын кыскартууну же көбөйтүүнү кааласаңыз, анда сумманы киргизип, тиешелүү баскычты басыңыз.</string>
+    <string name="if_you">Айлыкты өзгөртүү үчүн өзгөртүлгөн эмгек акыны киргизип, өзгөртүү баскычын басыңыз.</string>
     <string name="lower">Төмөндөтүү</string>
     <string name="raise">Көтөрүү</string>
-    <string name="successSalary">Successfully changed</string>
-    <string name="add_direction">Add direction</string>
-    <string name="please_select_employee">Please select employee!</string>
-    <string name="successAdd">"Successfully created! "</string>
-
+    <string name="successSalary">Ийгиликтүү өзгөртүлдү</string>
+    <string name="add_direction">Багыт кошуу</string>
+    <string name="please_select_employee">Сураныч, кызматкерди тандаңыз!</string>
+    <string name="successAdd">Ийгиликтүү түзүлдү!</string>
+    <string name="title">Аталышы</string>
+    <string name="description">Сүрөттөмө</string>
+    <string name="add">Кошуу</string>
+    <string name="select_employee">Кызматкерди тандоо</string>
+    <string name="change">Өзгөртүү</string>
+    <string name="please_enable_internet_connection">Сураныч, интернет байланышын иштетиңиз.</string>
+    <string name="refresh">Refresh</string>
 
 </resources>

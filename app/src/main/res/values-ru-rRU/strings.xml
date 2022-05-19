@@ -52,9 +52,16 @@
     <string name="if_you">Если, вы хотите понизить или повысить зарплату работнику, введите сумму и нажмите соответствующую кнопку.</string>
     <string name="lower">Понизить</string>
     <string name="raise">Повысить</string>
-    <string name="successSalary">Successfully changed</string>
-    <string name="add_direction">Add direction</string>
-    <string name="please_select_employee">Please select employee!</string>
-    <string name="successAdd">"Successfully created! "</string>
+    <string name="successSalary">Успешнно измененно</string>
+    <string name="add_direction">Добавить указания</string>
+    <string name="please_select_employee">Пожалуйста выберите работника!</string>
+    <string name="successAdd">Успешно созданно!</string>
+    <string name="title">Тема</string>
+    <string name="description">Описание</string>
+    <string name="add">Добавить</string>
+    <string name="select_employee">Выбрать работника</string>
+    <string name="change">Изменить</string>
+    <string name="please_enable_internet_connection">Пожалуйста включите интернет соединение.</string>
+    <string name="refresh">Refresh</string>
 
 </resources>

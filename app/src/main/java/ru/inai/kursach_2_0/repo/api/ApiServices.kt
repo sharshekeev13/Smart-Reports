@@ -57,4 +57,8 @@ class ApiServices(private val apiInstance: ApiInterface) {
     suspend fun getAllToDoEmployee(): Response<ArrayList<EmployeeToDoModel>>{
         return apiInstance.getEmployeeToDoAll()
     }
+
+    suspend fun deleteToDo(id : Int) : Response<Unit>{
+        return apiInstance.deleteToDo(id)
+    }
 }

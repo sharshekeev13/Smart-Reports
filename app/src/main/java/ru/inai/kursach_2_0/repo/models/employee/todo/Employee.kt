@@ -1,11 +1,13 @@
 package ru.inai.kursach_2_0.repo.models.employee.todo
 
+import java.io.Serializable
+
 data class Employee(
-    val id: Int,
-    val login: String,
-    val name: String,
-    val password: String,
-    val salary: Int,
-    val surname: String,
-    val userRole: String
-)
+    val id: Int? = null,
+    val login: String? = null,
+    val name: String? = null,
+    val password: String? = null,
+    val salary: Int? = null,
+    val surname: String? = null,
+    val userRole: String? = null
+) : Serializable

@@ -6,15 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.inai.kursach_2_0.repo.api.Repository
-import ru.inai.kursach_2_0.repo.models.ManagerToDoAllModel
-import ru.inai.kursach_2_0.repo.models.ToDoAllModel
-import ru.inai.kursach_2_0.repo.models.User
-import ru.inai.kursach_2_0.repo.models.employee.todo.EmployeeToDoModel
+import ru.inai.kursach_2_0.repo.models.employee.todo.Employee
 
 class DirectionViewModel() : ViewModel() {
 
     @SuppressLint("StaticFieldLeak")
-    private val liveListDirections = MutableLiveData<ArrayList<EmployeeToDoModel>>()
+    private val liveListDirections = MutableLiveData<ArrayList<AllDirectionsModel>>()
     fun getDirections() = liveListDirections
     private val repo = Repository()
 
@@ -24,10 +21,21 @@ class DirectionViewModel() : ViewModel() {
 
     fun getAllToDoEmployee() {
         viewModelScope.launch {
-            val response = repo.getAllToDoEmployee()
-            liveListDirections.postValue(response!!)
+            val ar = arrayListOf<AllDirectionsModel>()
+            val responseEmployee = repo.getAllToDoEmployee()
+            responseEmployee!!.forEach {
+                ar.add(AllDirectionsModel(it.id,it.title,it.description,it.employee,it.manager,it.date,it.status))
+            }
+            val responseManager = repo.getAllManagerToDo()
+            responseManager!!.forEach {
+                val userToEmployee = Employee(it.user!!.id,it.user.login,
+                    it.user.name,it.user.password,it.user.salary,it.user.surname,it.user.userRole)
+                ar.add(AllDirectionsModel(it.id,it.title,it.description,userToEmployee,null,it.date,it.status))
+            }
+            liveListDirections.postValue(ar)
         }
     }
+
     fun addToDoForEmployee(
             description: String,
             employeeId: Int,

@@ -2,6 +2,9 @@ package ru.inai.kursach_2_0.login
 
 
 import android.content.Context
+import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -9,6 +12,10 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import ru.inai.kursach_2_0.R
+import ru.inai.kursach_2_0.activity.director.ActivityDirector
+import ru.inai.kursach_2_0.activity.employee.ActivityEmployee
+import ru.inai.kursach_2_0.activity.manager.ActivityManager
+import ru.inai.kursach_2_0.activity.marketing.ActivityMarketing
 import ru.inai.kursach_2_0.databinding.ActivityLoginBinding
 import ru.inai.kursach_2_0.repo.models.loginAuthModel
 import ru.inai.kursach_2_0.utils.LocaleHelper
@@ -31,29 +38,46 @@ class ActivityLogin : AppCompatActivity() {
             viewModel = LoginViewModel(
                 binding.usernameTextInputEdittext,
                 applicationContext, binding.loginButton,binding.progressBarLoginActivity,this)
-            if(sp.getLanguage()=="en"){
+        ifWifiCheckForButton()
+        when {
+            sp.getLanguage()=="en" -> {
                 setRadioButtonTextColor("en")
                 binding.radioButtonEn.isChecked = true
-            }else if(sp.getLanguage()=="ru"){
+            }
+            sp.getLanguage()=="ru" -> {
                 setRadioButtonTextColor("ru")
                 binding.radioButtonRu.isChecked = true
-            }else if(sp.getLanguage() == "ky"){
+            }
+            sp.getLanguage() == "ky" -> {
                 setRadioButtonTextColor("ky")
                 binding.radioButtonKy.isChecked = true
             }
+        }
             binding.themeSwitch.isChecked = viewModel.getNightMode()
             setLanguage(sp.getLanguage())
             setContentView(binding.root)
         }
 
+
+    override fun onStart() {
+        super.onStart()
+        ifWifiCheckForButton()
+    }
+
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onResume() {
         super.onResume()
+        ifWifiCheckForButton()
+        binding.refreshButtonLoginPage.setOnClickListener {
+            ifWifiCheckForButton()
+        }
         binding.loginButton.setOnClickListener {
             binding.progressBarLoginActivity.visibility = View.VISIBLE
             binding.loginButton.visibility = View.GONE
             val loginAuth = loginAuthModel(binding.usernameTextInputEdittext.text.toString(),binding.passwordTextInputEdittext.text.toString())
-            viewModel.checkLogin(loginAuth)
+            val accountType = viewModel.startActivityFun(loginAuth)
+            startActivity(accountType)
         }
 
         binding.radioButtonEn.setOnClickListener {
@@ -98,20 +122,68 @@ class ActivityLogin : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     private fun setRadioButtonTextColor(language: String){
-        if(language == "en"){
-            binding.radioButtonEn.setTextColor(getColor(R.color.whiteBackActionBar))
-            binding.radioButtonRu.setTextColor(getColor(R.color.halo_blueText))
-            binding.radioButtonKy.setTextColor(getColor(R.color.halo_blueText))
+        when (language) {
+            "en" -> {
+                binding.radioButtonEn.setTextColor(getColor(R.color.whiteBackActionBar))
+                binding.radioButtonRu.setTextColor(getColor(R.color.halo_blueText))
+                binding.radioButtonKy.setTextColor(getColor(R.color.halo_blueText))
 
-        }else if(language == "ru"){
-            binding.radioButtonRu.setTextColor(getColor(R.color.whiteBackActionBar))
-            binding.radioButtonEn.setTextColor(getColor(R.color.halo_blueText))
-            binding.radioButtonKy.setTextColor(getColor(R.color.halo_blueText))
-        }else if(language == "ky"){
-            binding.radioButtonKy.setTextColor(getColor(R.color.whiteBackActionBar))
-            binding.radioButtonRu.setTextColor(getColor(R.color.halo_blueText))
-            binding.radioButtonEn.setTextColor(getColor(R.color.halo_blueText))
+            }
+            "ru" -> {
+                binding.radioButtonRu.setTextColor(getColor(R.color.whiteBackActionBar))
+                binding.radioButtonEn.setTextColor(getColor(R.color.halo_blueText))
+                binding.radioButtonKy.setTextColor(getColor(R.color.halo_blueText))
+            }
+            "ky" -> {
+                binding.radioButtonKy.setTextColor(getColor(R.color.whiteBackActionBar))
+                binding.radioButtonRu.setTextColor(getColor(R.color.halo_blueText))
+                binding.radioButtonEn.setTextColor(getColor(R.color.halo_blueText))
+            }
         }
+    }
+
+    private fun ifWifiCheckForButton() {
+        if(checkNetworkConnection(applicationContext)){
+            binding.noWiFiConnTextView.visibility = View.GONE
+            binding.noWiFiConn.visibility = View.GONE
+            binding.loginBoxForChangeVisibility.visibility = View.VISIBLE
+            binding.refreshButtonLoginPage.visibility = View.GONE
+        }else{
+            binding.noWiFiConnTextView.visibility = View.VISIBLE
+            binding.noWiFiConn.visibility = View.VISIBLE
+            binding.loginBoxForChangeVisibility.visibility = View.GONE
+            binding.refreshButtonLoginPage.visibility = View.VISIBLE
+        }
+    }
+
+
+    private fun checkNetworkConnection(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                else -> false
+            }
+        } else {
+            @Suppress("DEPRECATION") val networkInfo =
+                connectivityManager.activeNetworkInfo ?: return false
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnected
+        }
+    }
+
+    private fun startActivity(role : String){
+        var intent : Intent? = null
+        when(role){
+            "DIRECTOR" -> intent = Intent(this@ActivityLogin, ActivityDirector::class.java)
+            "MARKETING" -> intent = Intent(this@ActivityLogin, ActivityMarketing::class.java)
+            "MANAGER" -> intent = Intent(this@ActivityLogin, ActivityManager::class.java)
+            "WORKER" -> intent = Intent(this@ActivityLogin, ActivityEmployee::class.java)
+        }
+        startActivity(intent)
     }
 
 }

@@ -13,9 +13,9 @@ import ru.inai.kursach_2_0.repository.model.Directions
 
 class DirectionsAdapter() : RecyclerView.Adapter<DirectionsAdapter.MyViewHolder>() {
 
-    private val list : ArrayList<EmployeeToDoModel> = arrayListOf()
+    private val list : ArrayList<AllDirectionsModel> = arrayListOf()
 
-    fun putList(_list : ArrayList<EmployeeToDoModel>){
+    fun putList(_list : ArrayList<AllDirectionsModel>){
         list.clear()
         list.addAll(_list)
     }
@@ -34,8 +34,8 @@ class DirectionsAdapter() : RecyclerView.Adapter<DirectionsAdapter.MyViewHolder>
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.firstName.text = list[position].employee!!.name
-        holder.secondName.text = list[position].employee!!.surname
+        holder.firstName.text = list[position].employeeObject!!.name
+        holder.secondName.text = list[position].employeeObject!!.surname
         holder.title.text = list[position].title
         val descriptionText = list[position].description
         holder.description.text = descriptionText

@@ -47,14 +47,15 @@ class LoginViewModel(
     fun getNightMode() = isNightModeOn
 
 
-    fun checkLogin(login : loginAuthModel){
+    private fun checkLogin(login : loginAuthModel) : String{
+        var returnString : String = ""
         viewModelScope.launch {
             val response = repo.loginFunction(login)
             if (response != null) {
                 if (response.isSuccessful) {
                     sharedPreferences.putId(response.body()!!.id)
                     progressBar.visibility = View.GONE
-                    startActivity(response.body()!!.userRole.toString())
+                    returnString = response.body()!!.userRole.toString()
                 }
             }else{
                 progressBar.visibility = View.GONE
@@ -63,6 +64,11 @@ class LoginViewModel(
                 loginButton.visibility = View.VISIBLE
             }
         }
+        return returnString
+    }
+
+    public fun startActivityFun(login : loginAuthModel): String {
+        return checkLogin(login)
     }
 
     private fun incorrectLogin(){
@@ -88,16 +94,5 @@ class LoginViewModel(
         }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
-    }
-
-    private fun startActivity(role : String){
-        var intent : Intent? = null
-        when(role){
-            "DIRECTOR" -> intent = Intent(context,ActivityDirector::class.java)
-            "MARKETING" -> intent = Intent(context,ActivityMarketing::class.java)
-            "MANAGER" -> intent = Intent(context,ru.inai.kursach_2_0.activity.manager.ActivityManager::class.java)
-            "WORKER" -> intent = Intent(context,ActivityEmployee::class.java)
-        }
-        context.startActivity(intent)
     }
 }

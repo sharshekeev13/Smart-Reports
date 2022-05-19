@@ -17,8 +17,6 @@ class CompletedToDoFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: CompletedToDoViewModel
     private lateinit var adapter: CompletedToDoAdapter
-    private val listCompleted = arrayListOf<CompletedToDo>()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,10 +28,10 @@ class CompletedToDoFragment : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = CompletedToDoAdapter(listCompleted)
-        viewModel = CompletedToDoViewModel()
+        viewModel = CompletedToDoViewModel(view.context)
+        adapter = CompletedToDoAdapter(viewModel.getUserId())
         viewModel.getListCompletedToDo().observe(viewLifecycleOwner){
-            listCompleted.addAll(it)
+            adapter.putList(it)
             adapter.notifyDataSetChanged()
         }
         binding.completedToDoRecyclerView.layoutManager = LinearLayoutManager(view.context)
